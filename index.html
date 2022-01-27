@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="file" id="filename"/>
+    <script>
+        const selectedFile = document.getElementById('filename').files[0];
+        const reader = new FileReader()
+        var fileData = new Uint8Array(selectedFile.size);
+        var buffer;
+        selectedFile.arrayBuffer().then(x => {
+            buffer = new Uint8Array(x)
+        });
+        // reader.onload = function(evt) {
+        //     console.log(typeof(evt.target.))
+        //     fileData = evt.target.result;
+        // }
+        // reader.readAsArrayBuffer(selectedFile)
+        // console.log(selectedFile)
+    </script>
+    <script>
+        var Module = {
+
+        };
+    </script>
+    <script src="vmiutil.js"></script>
+</body>
+</html>
