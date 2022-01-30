@@ -1,4 +1,0 @@
-# ninja log v5
-260	319	1643185380936059204	vmiutil	ba10b3b37814ef0d
-0	260	1643185380872060312	CMakeFiles/vmiutil.dir/main.cpp.o	c7456debe7b56457
-1	48	1643185380664063911	CMakeFiles/vmiutil.dir/qcow2.c.o	429dd6279cd0e514

@@ -39,7 +39,7 @@ public:
 
     private:
         std::string m_magic;
-        std::string m_version;
+        uint32_t m_version;
         uint64_t m_backing_file_offset;
         uint32_t m_backing_file_size;
         std::string m_cluster_bits;
@@ -56,7 +56,7 @@ public:
 
     public:
         std::string magic() const { return m_magic; }
-        std::string version() const { return m_version; }
+        uint32_t version() const { return m_version; }
 
         /**
          * Offset into the image file at which the backing file name

@@ -1,4 +1,4 @@
 #!/bin/bash
-pushd kaitai-generated || exit
-kaitai-struct-compiler -t cpp_stl ../kaitai/qcow2.yml
+pushd kaitai || exit
+ksc -t cpp_stl qcow2.yml
 popd

@@ -9,8 +9,8 @@
 
 class QCOW2Format : public IVMImageFormatReader {
  public:
-  bool prepare(char *data) override;
-  bool read() override;
+  bool openFile(std::string filename) override;
+  bool openData(const char *data) override;
   void close() override;
  private:
   char* m_data;

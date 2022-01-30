@@ -11,7 +11,7 @@ types:
       - id: magic
         contents: ['QFI',0xfb]
       - id: version
-        size: 4
+        type: u4le
       - id: backing_file_offset
         type: u8
         doc: |
