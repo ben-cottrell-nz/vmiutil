@@ -47,7 +47,7 @@ void qcow2_t::header_t::_read() {
     if (!(magic() == std::string("\x51\x46\x49\xFB", 4))) {
         throw kaitai::validation_not_equal_error<std::string>(std::string("\x51\x46\x49\xFB", 4), magic(), _io(), std::string("/types/header/seq/0"));
     }
-    m_version = m__io->read_u4le();
+    m_version = m__io->read_u4be();
     m_backing_file_offset = m__io->read_u8be();
     m_backing_file_size = m__io->read_u4be();
     m_cluster_bits = m__io->read_bytes(4);

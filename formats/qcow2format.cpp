@@ -7,14 +7,15 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include "memory_stream_wrapper.h"
 void QCOW2Format::close() {
 
 }
 //return true if its valid
-bool QCOW2Format::openData(const char* data) {
-  std::string_view data_strv = data;
+bool QCOW2Format::openData(const char* data, const size_t size) {
+  imemstream data_ms(data,size);
   bool stop = false, ok = true;
-  kaitai::kstream ks(data_strv.data());
+  kaitai::kstream ks(&data_ms);
   //check the header
   qcow2_t qcow2_file_parsed_data = qcow2_t(&ks);
   if (!(qcow2_file_parsed_data.header()->magic() == "QFI\xfb")) {
@@ -36,5 +37,5 @@ bool QCOW2Format::openFile(const std::string filename) {
 	num_bytes_read = fs.gcount();
 	buffer.resize(buffer.size() + num_bytes_read, 0);
   }
-  return openData(buffer.data());
+  return openData(buffer.data(),buffer.size());
 }

@@ -10,7 +10,7 @@ class IVMImageFormatReader {
  public:
   ~IVMImageFormatReader() {}
   virtual bool openFile(const std::string filename) = 0;
-  virtual bool openData(const char *data) = 0;
+  virtual bool openData(const char *data, const size_t size) = 0;
   virtual void close() = 0;
 };
 
